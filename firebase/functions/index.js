@@ -47,7 +47,7 @@ function processV1Request (request, response) {
   },
   'findnearbyparks.findnearbyparks-yes':() => {
     sendResponse({
-      speech:"Piedmont Park, Historic Fourth Ward Park, and the Beltline are nearby.",
+      speech:"Piedmont Park, Historic Fourth Ward Park, Georgia Tech Commons, and the Beltline are nearby.",
       text:"Here are some parks"
     });
   },
