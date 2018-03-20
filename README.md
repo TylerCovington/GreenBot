@@ -3,7 +3,7 @@ DialogFlow Interface for Georgia Park Data
 
 Work in progress: [data.georgia.org/parks](https://data.georgia.org/parks)
 
-#Firebase Function install steps
+# Firebase Function Install Steps
 
 cd firebase/functions
 
@@ -30,7 +30,7 @@ Deploy your Cloud Function for Firebase with:
 Source: [https://dialogflow.com/docs/how-tos/getting-started-fulfillment](https://dialogflow.com/docs/how-tos/getting-started-fulfillment)
 
 
-#About Machine Learning
+# About Machine Learning
 
 Machine learning takes a set of inputs and outputs and figures out the correlation all by itself through a set of hidden intermediate steps. Then, when given a new input, it can use the correlation that it “learned” to predict the output for some new input. 
 
