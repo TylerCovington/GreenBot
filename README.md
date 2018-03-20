@@ -3,7 +3,34 @@ DialogFlow Interface for Georgia Park Data
 
 Work in progress: [data.georgia.org/parks](https://data.georgia.org/parks)
 
-Machine Learning:
+#Firebase Function install steps
+
+cd firebase/functions
+
+npm install
+
+firebase login
+
+firebase init
+
+? What language would you like to use to write Cloud Functions? JavaScript
+? Do you want to use ESLint to catch probable bugs and enforce style? No
+? File functions/package.json already exists. Overwrite? No
+i  Skipping write of functions/package.json
+? File functions/index.js already exists. Overwrite? No
+i  Skipping write of functions/index.js
+? Do you want to install dependencies with npm now? No
+
+Allow Firebase to collect anonymous info - n
+
+
+Deploy your Cloud Function for Firebase with:
+ firebase deploy --only functions:dialogflowFirebaseFulfillment
+
+Source: [https://dialogflow.com/docs/how-tos/getting-started-fulfillment](https://dialogflow.com/docs/how-tos/getting-started-fulfillment)
+
+
+#About Machine Learning
 
 Machine learning takes a set of inputs and outputs and figures out the correlation all by itself through a set of hidden intermediate steps. Then, when given a new input, it can use the correlation that it “learned” to predict the output for some new input. 
 
