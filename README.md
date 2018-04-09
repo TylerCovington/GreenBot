@@ -3,6 +3,11 @@ DialogFlow Interface for Georgia Park Data
 
 Work in progress: [data.georgia.org/parks](https://data.georgia.org/parks)
 
+To Do: Install https://github.com/MishUshakov/dialogflow-web
+
+If issue occurs, provide version of Node.JS, npm and Operating System here:
+https://github.com/MishUshakov/dialogflow-web/issues/9
+
 ## Firebase Function Install Steps
 
 cd firebase/functions
