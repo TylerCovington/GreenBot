@@ -3,9 +3,11 @@ DialogFlow Interface for Georgia Park Data
 
 Work in progress: [data.georgia.org/parks](https://data.georgia.org/parks)
 
+US Census Data - Google BigQuery: https://cloud.google.com/bigquery/public-data/us-census
+
 To Do: Install https://github.com/MishUshakov/dialogflow-web
 
-If issue occurs, provide version of Node.JS, npm and Operating System here:
+If install issue occurs, provide version of Node.JS, npm and Operating System here:
 https://github.com/MishUshakov/dialogflow-web/issues/9
 
 ## Firebase Function Install Steps
