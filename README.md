@@ -5,7 +5,8 @@ Work in progress: [data.georgia.org/parks](https://data.georgia.org/parks)
 
 Census Tracts: https://georgia-map.carto.com/tables/total_population_2016/public/map
 
-Census Blocks: https://www.census.gov/geo/maps-data/data/tiger-data.html
+2016 Census Block Groups (sets of census blocks): https://www.census.gov/geo/maps-data/data/tiger-data.html
+(Census blocks are only available every 10 years.)
 
 Atlanta Greenspace: https://mycommunity.carto.com/dashboard
 <!--
