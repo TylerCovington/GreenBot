@@ -3,7 +3,14 @@ DialogFlow Interface for Georgia Park Data
 
 Work in progress: [data.georgia.org/parks](https://data.georgia.org/parks)
 
+Census Tracts: https://georgia-map.carto.com/tables/total_population_2016/public/map
+
+Census Blocks: https://www.census.gov/geo/maps-data/data/tiger-data.html
+
+Atlanta Greenspace: https://mycommunity.carto.com/dashboard
+<!--
 US Census Data - Google BigQuery: https://cloud.google.com/bigquery/public-data/us-census
+-->
 
 To Do: Install https://github.com/MishUshakov/dialogflow-web
 
