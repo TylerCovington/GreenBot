@@ -1,7 +1,9 @@
 # GreenBot
 DialogFlow Interface for Georgia Park Data
 
-Work in progress: [data.georgia.org/parks](https://data.georgia.org/parks)
+DialogFlow work in progress: [data.georgia.org/parks](https://data.georgia.org/parks)
+
+[Parks Trust Public Land Deserts (Curbed)](https://atlanta.curbed.com/2018/5/1/17307034/atlanta-parks-trust-public-land-deserts) - [View Map](https://parkserve.tpl.org/mapping/index.html?CityID=1304000)
 
 Census Tracts: https://georgia-map.carto.com/tables/total_population_2016/public/map
 
