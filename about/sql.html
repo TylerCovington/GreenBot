@@ -3,7 +3,7 @@ From maps/distance
 
 LEFT JOIN 
 
-(SELECT m.cartodb_id, m.id, m.the_geom, m.the_geom_webmercator, m.name property_name, m.lat, m.lon, m.iname[1]       As railroad_ID1, m.iname[2] As railroad_ID2, m.iname[3] As railroad_ID3     
+(SELECT m.cartodb_id, m.id, m.name property_name, m.the_geom, m.the_geom_webmercator, m.lat, m.lon, m.iname[1]       As railroad_ID1, m.iname[2] As railroad_ID2, m.iname[3] As railroad_ID3     
 
 
 FROM (SELECT b.cartodb_id, b.id, b.name, b.the_geom, b.the_geom_webmercator, b.lat, b.lon, ARRAY(SELECT p.cartodb_id FROM georgia_railroads_merge p WHERE ST_DWithin(b.the_geom, p.the_geom, 5000) ORDER BY ST_Distance(b.the_geom, p.the_geom) LIMIT 3) 
@@ -46,8 +46,71 @@ FROM atlanta_greenspace b) theAlias
 
 3 nearest parks (atlanta_greenspace) to census area (cb_2016_13_bg_500k)
 
-SELECT b.cartodb_id, b.geoid, b.name, b.the_geom, b.the_geom_webmercator, b.countyfp, ARRAY(SELECT p.cartodb_id FROM  atlanta_greenspace p WHERE ST_Distance(p.the_geom, b.the_geom) <= .001 ORDER BY ST_Distance(p.the_geom, b.the_geom) LIMIT 30) 
 
-As iname2     
+SELECT b.cartodb_id, b.geoid, b.name, b.the_geom, b.the_geom_webmercator, b.countyfp, ARRAY(SELECT p.cartodb_id FROM  atlanta_greenspace p WHERE ST_Distance(p.the_geom, b.the_geom) <= 10 ORDER BY ST_Distance(p.the_geom, b.the_geom) LIMIT 3)
+
+As iname     
 
 FROM cb_2016_13_bg_500k b
+
+
+
+
+3 nearest parks in sepearated columns
+
+
+SELECT m.cartodb_id, m.geoid, m.aland, m.the_geom, m.the_geom_webmercator, m.countyfp, m.iname[1] As park1, m.iname[2] As park2, m.iname[3] As park3     
+
+
+FROM (SELECT b.cartodb_id, b.geoid, b.aland, b.the_geom, b.the_geom_webmercator, b.countyfp, ARRAY(SELECT p.cartodb_id FROM  atlanta_greenspace p WHERE p.the_geom IS NOT NULL AND ST_Distance(p.the_geom, b.the_geom) <= 10 ORDER BY ST_Distance(p.the_geom, b.the_geom) LIMIT 3)
+
+As iname     
+
+FROM cb_2016_13_bg_500k b)
+
+ m order by m.aland
+
+
+- Includes distance to all 3
+
+SELECT m.cartodb_id, m.geoid, m.aland, m.the_geom, m.the_geom_webmercator, m.countyfp, m.iname[1] As park1, m.iname[2] As park2, m.iname[3] As park3, m.igeom[1] As parkgeom1, m.igeom[2] As parkgeom2, m.igeom[3] As parkgeom3, ST_Distance(m.the_geom, m.igeom[1]) parkdistance1, ST_Distance(m.the_geom, m.igeom[2]) parkdistance2, ST_Distance(m.the_geom, m.igeom[3]) parkdistance3 
+
+FROM (SELECT b.cartodb_id, b.geoid, b.aland, b.the_geom, b.the_geom_webmercator, b.countyfp, 
+
+ARRAY(SELECT p.cartodb_id FROM  atlanta_greenspace p WHERE p.the_geom IS NOT NULL AND ST_Distance(p.the_geom, b.the_geom) <= 10 ORDER BY ST_Distance(p.the_geom, b.the_geom) LIMIT 3) As iname,
+
+ARRAY(SELECT p.the_geom FROM  atlanta_greenspace p WHERE p.the_geom IS NOT NULL AND ST_Distance(p.the_geom, b.the_geom) <= 10 ORDER BY ST_Distance(p.the_geom, b.the_geom) LIMIT 3)
+
+As igeom     
+
+FROM cb_2016_13_bg_500k b)
+
+m order by m.aland
+
+
+
+
+Count matches the cb_2016_13_bg_500k count...
+
+select count(*) FROM (SELECT m.cartodb_id, m.geoid, m.name, m.the_geom, m.the_geom_webmercator, m.countyfp, m.iname[1] As railroad_ID1, m.iname[2] As railroad_ID2, m.iname[3] As railroad_ID3     
+
+
+FROM (SELECT b.cartodb_id, b.geoid, b.name, b.the_geom, b.the_geom_webmercator, b.countyfp, ARRAY(SELECT p.cartodb_id FROM  atlanta_greenspace p WHERE ST_Distance(p.the_geom, b.the_geom) <= 10 ORDER BY ST_Distance(p.the_geom, b.the_geom) LIMIT 3)
+
+As iname     
+
+FROM cb_2016_13_bg_500k b)
+
+ m) r
+
+
+Create a simple query with distance to nearest park (polygon to polygon):
+
+SELECT m.cartodb_id, m.geoid, m.aland, m.the_geom, m.the_geom_webmercator, m.countyfp, 
+(SELECT p.name FROM atlanta_greenspace p WHERE p.the_geom IS NOT NULL AND ST_Distance(m.the_geom, p.the_geom) <= 10 ORDER BY ST_Distance(m.the_geom, p.the_geom) LIMIT 1)
+AS parkname,
+ST_Distance(m.the_geom, (SELECT p.the_geom FROM atlanta_greenspace p WHERE p.the_geom IS NOT NULL AND ST_Distance(m.the_geom, p.the_geom) <= 10 ORDER BY ST_Distance(m.the_geom, p.the_geom) LIMIT 1))
+AS parkdistance
+FROM cb_2016_13_bg_500k m
+
+
