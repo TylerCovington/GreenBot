@@ -1,0 +1,53 @@
+Sample with location (poly point) to surrounding railroad (poly lines)
+From maps/distance
+
+LEFT JOIN 
+
+(SELECT m.cartodb_id, m.id, m.the_geom, m.the_geom_webmercator, m.name property_name, m.lat, m.lon, m.iname[1]       As railroad_ID1, m.iname[2] As railroad_ID2, m.iname[3] As railroad_ID3     
+
+
+FROM (SELECT b.cartodb_id, b.id, b.name, b.the_geom, b.the_geom_webmercator, b.lat, b.lon, ARRAY(SELECT p.cartodb_id FROM georgia_railroads_merge p WHERE ST_DWithin(b.the_geom, p.the_geom, 5000) ORDER BY ST_Distance(b.the_geom, p.the_geom) LIMIT 3) 
+
+As iname     
+
+FROM locations b where status = 'Available')
+
+ m) rr ON locations.id = rr.id
+
+---
+
+GREENSPACE AND BLOCK GROUPS
+
+4601 intersects
+
+SELECT count(*) FROM cb_2016_13_bg_500k,atlanta_greenspace WHERE ST_Intersects(cb_2016_13_bg_500k.the_geom, atlanta_greenspace.the_geom)
+
+
+---
+
+3 nearest census areas (cb_2016_13_bg_500k) to park (atlanta_greenspace)
+Incomplete results (only 30)
+SELECT b.cartodb_id, b.objectid, b.name, b.the_geom, b.the_geom_webmercator, b.county, ARRAY(SELECT p.cartodb_id FROM cb_2016_13_bg_500k p WHERE ST_Distance(p.the_geom, b.the_geom) <= .001 ORDER BY ST_Distance(p.the_geom, b.the_geom) LIMIT 30) 
+
+As iname2     
+
+FROM atlanta_greenspace b
+
+-
+
+Too expensive:
+SELECT count(*) FROM (SELECT b.cartodb_id, b.objectid, b.name, b.the_geom, b.the_geom_webmercator, b.county, ARRAY(SELECT p.cartodb_id FROM cb_2016_13_bg_500k p WHERE ST_DWithin(b.the_geom, p.the_geom, 5000) ORDER BY ST_Distance(b.the_geom, p.the_geom) LIMIT 3) 
+
+As iname2     
+
+FROM atlanta_greenspace b) theAlias
+
+---
+
+3 nearest parks (atlanta_greenspace) to census area (cb_2016_13_bg_500k)
+
+SELECT b.cartodb_id, b.geoid, b.name, b.the_geom, b.the_geom_webmercator, b.countyfp, ARRAY(SELECT p.cartodb_id FROM  atlanta_greenspace p WHERE ST_Distance(p.the_geom, b.the_geom) <= .001 ORDER BY ST_Distance(p.the_geom, b.the_geom) LIMIT 30) 
+
+As iname2     
+
+FROM cb_2016_13_bg_500k b
