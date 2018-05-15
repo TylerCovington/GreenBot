@@ -114,3 +114,36 @@ AS parkdistance
 FROM cb_2016_13_bg_500k m
 
 
+GREENSPACE INSIDE AREA - Don't use, multiple rows for each area
+
+Select p.name, p.cartodb_id, b.the_geom, ST_Area(b.the_geom::geography) area, ST_Area(p.the_geom::geography) parkarea
+
+From cb_2016_13_bg_500k as b, atlanta_greenspace as p
+
+Where 
+
+ST_Intersects(b.the_geom,p.the_geom)
+
+
+GREENSPACE SUM
+
+SELECT geoid areaID, sum(ST_Area(the_geom)/100) AS area
+FROM (
+  SELECT a.geoid, a.the_geom
+  FROM cb_2016_13_bg_500k a
+  JOIN atlanta_greenspace b ON ST_Intersects(a.the_geom, b.the_geom)
+) sub
+GROUP BY areaID
+ORDER BY areaID
+
+
+Add these to above:
+
+(area(intersection(t1.geometry,t2.geometry))) as "Commun_AREA"
+
+, ("Commun_AREA"*100/(area(t1.geometry))) as "Percent_AREA"
+
+
+
+
+
