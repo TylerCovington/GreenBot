@@ -127,13 +127,15 @@ ST_Intersects(b.the_geom,p.the_geom)
 
 GREENSPACE SUM
 
-SELECT geoid areaID, sum(ST_Area(the_geom)/100) AS area
+To do: Need to adjust green_area to only reside within (intersect?) the current block area:
+
+SELECT geoid areaID, the_geom, sum(ST_Area(the_geom)/100) AS area, sum(ST_Area(green_geom)/100) AS green_area
 FROM (
-  SELECT a.geoid, a.the_geom
+  SELECT a.geoid, a.the_geom, b.the_geom green_geom
   FROM cb_2016_13_bg_500k a
   JOIN atlanta_greenspace b ON ST_Intersects(a.the_geom, b.the_geom)
 ) sub
-GROUP BY areaID
+GROUP BY areaID, the_geom
 ORDER BY areaID
 
 

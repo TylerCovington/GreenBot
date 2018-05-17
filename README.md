@@ -12,6 +12,9 @@ Census Tracts: https://georgia-map.carto.com/tables/total_population_2016/public
 (Census blocks are only available every 10 years.)
 
 Atlanta Greenspace: https://mycommunity.carto.com/dashboard
+
+Firestore setup:  https://miningbusinessdata.com/firebase-guide-part-1-create-new-dialogflow-agent/
+
 <!--
 US Census Data - Google BigQuery: https://cloud.google.com/bigquery/public-data/us-census
 -->
