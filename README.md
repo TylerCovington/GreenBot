@@ -34,15 +34,14 @@ firebase login
 firebase init
 
 These can differ:<br>
-? What language would you like to use to write Cloud Functions? JavaScript<br>
-? Do you want to use ESLint to catch probable bugs and enforce style? No<br>
-? File functions/package.json already exists. Overwrite? No<br>
-i  Skipping write of functions/package.json<br>
-? File functions/index.js already exists. Overwrite? No<br>
-i  Skipping write of functions/index.js<br>
-? Do you want to install dependencies with npm now? No<br>
+What language would you like to use to write Cloud Functions? JavaScript<br>
+Do you want to use ESLint to catch probable bugs and enforce style? No<br>
+File functions/package.json already exists. Overwrite? No<br>
+&nbsp; Skipping write of functions/package.json<br>
+File functions/index.js already exists. Overwrite? No<br>
+&nbsp; Skipping write of functions/index.js<br>
+Do you want to install dependencies with npm now? No<br>
 Allow Firebase to collect anonymous info - n
-
 
 Deploy your Cloud Function for Firebase with:<br>
  firebase deploy --only functions:dialogflowFirebaseFulfillment
