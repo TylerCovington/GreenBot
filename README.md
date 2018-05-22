@@ -29,8 +29,8 @@ ORDER BY areaID<br>
 
 5. Add sample maps using Google, Carto and MapBox<br>
 Parks and green space layers in a combined Carto map.<br>
-Incomplete park dataset is the one the city provided to James for the Park Finder site.<br>
-https://mycommunity.carto.com/builder/2dc11226-86c7-458a-838b-56de1ffd7027/embed
+https://mycommunity.carto.com/builder/2dc11226-86c7-458a-838b-56de1ffd7027/embed<br>
+Incomplete park dataset provided to James by city for Park Finder site.
 
 6. Find Firebase Function samples using DialogFlow v2 with Firestore.
 The Iframe uses: https://github.com/MishUshakov/dialogflow-web<br>
