@@ -24,8 +24,7 @@ FROM (
   JOIN atlanta_greenspace b ON ST_Intersects(a.the_geom, b.the_geom)
 ) sub
 GROUP BY areaID, the_geom
-ORDER BY areaID<br><br>
-
+ORDER BY areaID<br>
 [Percentage of Polygon Sample](https://gis.stackexchange.com/questions/65956/percentage-of-polygon-in-one-shapefile-within-polygon-of-another)
 
 5. Add sample maps using Google, Carto and MapBox<br>
