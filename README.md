@@ -2,13 +2,14 @@
 
 [data.georgia.org/parks](https://data.georgia.org/parks)
 
-The Iframe in the page above uses: https://github.com/MishUshakov/dialogflow-web<br>
+The iFrame in the page above uses: https://github.com/MishUshakov/dialogflow-web<br>
 Note: Avoid "npm init", use "npm install" instead.<br>
 We are waiting for DialogFlow 2.0 version from MishUshakov
 
 <b>Projects:</b>
 
-1. Automate pulling available bike-share locations from [Coord.co](https://Coord.co) API. Discuss ways to use docks and existing bike racks with dockless bikes and scooters.
+1. Automate pulling available bike-share locations from [Coord.co](https://Coord.co) API.<br>
+Discuss ways to use docks and existing bike racks with dockless bikes and scooters.
 
 2. Convert 2012-2016 Detailed Table > Block Groups (sets of census blocks) from Tiger.<br>
 https://www.census.gov/geo/maps-data/data/tiger-data.html<br>
