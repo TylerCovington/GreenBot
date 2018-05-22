@@ -1,15 +1,26 @@
 # GreenBot
-DialogFlow Interface for Georgia Park Data. Work in progress: [data.georgia.org/parks](https://data.georgia.org/parks)
 
-Iframe uses: https://github.com/MishUshakov/dialogflow-web
-Note: Avoid "npm init", use "npm install" instead.
+<b>Projects:</b>
+
+1. Pull available bike-share locations from [Coord.co](https://Coord.co)
+
+2. Convert 2012-2016 Detailed Table > Block Groups (sets of census blocks) from Tiger.<br>
+https://www.census.gov/geo/maps-data/data/tiger-data.html<br>
+(Blocks are only available every 10 years.)
+
+DialogFlow Interface for Georgia Park Data. 
+
+Work in progress: [data.georgia.org/parks](https://data.georgia.org/parks)
+
+The Iframe uses: https://github.com/MishUshakov/dialogflow-web<br>
+Note: Avoid "npm init", use "npm install" instead.<br>
+We are waiting for DialogFlow 2.0 version from MishUshakov
 
 [Parks Trust Public Land Deserts (Curbed)](https://atlanta.curbed.com/2018/5/1/17307034/atlanta-parks-trust-public-land-deserts) - [View Map](https://parkserve.tpl.org/mapping/index.html?CityID=1304000)
 
 Census Tracts: https://georgia-map.carto.com/tables/total_population_2016/public/map
 
-2016 Census Block Groups (sets of census blocks): https://www.census.gov/geo/maps-data/data/tiger-data.html
-(Census blocks are only available every 10 years.)
+
 
 Atlanta Greenspace: https://mycommunity.carto.com/dashboard
 
