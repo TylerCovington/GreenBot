@@ -2,7 +2,7 @@
 
 <b>Projects:</b>
 
-1. Pull available bike-share locations from [Coord.co](https://Coord.co)
+1. Automate pulling available bike-share locations from [Coord.co](https://Coord.co) API. Discuss ways to use docks and existing bike racks with dockless bikes and scooters.
 
 2. Convert 2012-2016 Detailed Table > Block Groups (sets of census blocks) from Tiger.<br>
 https://www.census.gov/geo/maps-data/data/tiger-data.html<br>
