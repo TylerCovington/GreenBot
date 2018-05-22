@@ -1,5 +1,7 @@
 # GreenBot
 
+[data.georgia.org/parks](https://data.georgia.org/parks)
+
 <b>Projects:</b>
 
 1. Automate pulling available bike-share locations from [Coord.co](https://Coord.co) API. Discuss ways to use docks and existing bike racks with dockless bikes and scooters.
@@ -13,7 +15,7 @@ https://forum.openstreetmap.org/viewtopic.php?id=61119<br>
 Resulting Atlanta park outline dataset in Carto:<br>
 https://mycommunity.carto.com/builder/f6c3b59c-449d-4f46-9081-44e3cb1c69ac/embed
 
-Work toward showing the amount of green space relative to each census block group. (Needs to add up space, and include green space with 1/4 mile of block group.)<br>
+4. Work toward showing the amount of green space relative to each census block group. (Needs to add up greenspace from GROUP  BY clause, and also include sum of greenspace area with 1/4 mile of block group.)<br>
 
 SELECT geoid areaID, the_geom, sum(ST_Area(the_geom)/100) AS area, sum(ST_Area(green_geom)/100) AS green_area
 FROM (
@@ -22,16 +24,16 @@ FROM (
   JOIN atlanta_greenspace b ON ST_Intersects(a.the_geom, b.the_geom)
 ) sub
 GROUP BY areaID, the_geom
-ORDER BY areaID
+ORDER BY areaID<br><br>
 
+[Percentage of Polygon Sample](https://gis.stackexchange.com/questions/65956/percentage-of-polygon-in-one-shapefile-within-polygon-of-another)
+
+5. Add sample maps using Google, Carto and MapBox<br>
 Parks and green space layers in a combined Carto map.<br>
 Incomplete park dataset is the one the city provided to James for the Park Finder site.<br>
 https://mycommunity.carto.com/builder/2dc11226-86c7-458a-838b-56de1ffd7027/embed
 
-<b>DialogFlow Interface:</b>
-
-[data.georgia.org/parks](https://data.georgia.org/parks)
-
+6. Find Firebase Function samples using DialogFlow v2 with Firestore.
 The Iframe uses: https://github.com/MishUshakov/dialogflow-web<br>
 Note: Avoid "npm init", use "npm install" instead.<br>
 We are waiting for DialogFlow 2.0 version from MishUshakov
