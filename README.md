@@ -2,6 +2,10 @@
 
 [data.georgia.org/parks](https://data.georgia.org/parks)
 
+The Iframe in the page above uses: https://github.com/MishUshakov/dialogflow-web<br>
+Note: Avoid "npm init", use "npm install" instead.<br>
+We are waiting for DialogFlow 2.0 version from MishUshakov
+
 <b>Projects:</b>
 
 1. Automate pulling available bike-share locations from [Coord.co](https://Coord.co) API. Discuss ways to use docks and existing bike racks with dockless bikes and scooters.
@@ -32,12 +36,8 @@ Parks and green space layers in a combined Carto map.<br>
 https://mycommunity.carto.com/builder/2dc11226-86c7-458a-838b-56de1ffd7027/embed<br>
 Incomplete park dataset provided to James by city for Park Finder site.
 
-6. Find Firebase Function samples using DialogFlow v2 with Firestore.
-The Iframe uses: https://github.com/MishUshakov/dialogflow-web<br>
-Note: Avoid "npm init", use "npm install" instead.<br>
-We are waiting for DialogFlow 2.0 version from MishUshakov
-
-Firestore setup (DialogFlow v1):
+6. Find Firebase Function samples using DialogFlow v2 with Firestore.<br>
+Firestore setup (DialogFlow v1):<br>
 https://miningbusinessdata.com/firebase-guide-part-1-create-new-dialogflow-agent/
 
 <b>Carto Maps</b>
