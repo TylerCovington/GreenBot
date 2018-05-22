@@ -8,8 +8,9 @@ We are waiting for DialogFlow 2.0 version from MishUshakov
 
 <b>Projects:</b>
 
-1. Automate pulling available bike-share locations from [Coord.co](https://Coord.co) API.<br>
-Discuss ways to use docks and existing bike racks with dockless bikes and scooters.
+1. Automate pulling available bikeshare locations from [Coord.co](https://Coord.co) API.<br>
+Discuss ways to use docks and existing bike racks with dockless bikes and scooters.<br>
+A few cities require [General Bikeshare Feed Specification (GBFS)](https://github.com/NABSA/gbfs) feeds, but it is not consistent nor consistently enforced. Coord.co API also provides Atlanta Ride-hail data.
 
 2. Convert 2012-2016 Detailed Table > Block Groups (sets of census blocks) from Tiger.<br>
 https://www.census.gov/geo/maps-data/data/tiger-data.html<br>
