@@ -8,15 +8,14 @@ We are waiting for DialogFlow 2.0 version from MishUshakov
 
 <b>Projects:</b>
 
-1. Automate pulling available bikeshare locations from [Coord.co](https://Coord.co) API.<br>
-Discuss ways to use docks and existing bike racks with dockless bikes and scooters.<br>
-A few cities require [General Bikeshare Feed Specification (GBFS)](https://github.com/NABSA/gbfs) feeds, but it is not consistent nor consistently enforced. Coord.co API also provides Atlanta Ride-hail data.
+1. Display available bikeshare locations from [Coord.co](https://Coord.co) API. - DONE<br>
+Notes: A few cities require [General Bikeshare Feed Specification (GBFS)](https://github.com/NABSA/gbfs) feeds, but it is not consistent nor consistently enforced. Coord.co API also provides Atlanta Ride-hail data.
 
 2. Convert 2012-2016 Detailed Table > Block Groups (sets of census blocks) from Tiger.<br>
 https://www.census.gov/geo/maps-data/data/tiger-data.html<br>
 (Blocks are only available every 10 years.)
 
-3. Pull greenspace from OpenStreetMaps, use shapes instead of boundaries.<br>
+3. Pull greenspace from OpenStreetMaps, use shapes instead of boundaries. - James<br>
 https://forum.openstreetmap.org/viewtopic.php?id=61119<br>
 Resulting Atlanta park outline dataset in Carto:<br>
 https://mycommunity.carto.com/builder/f6c3b59c-449d-4f46-9081-44e3cb1c69ac/embed
@@ -24,7 +23,7 @@ https://mycommunity.carto.com/builder/f6c3b59c-449d-4f46-9081-44e3cb1c69ac/embed
 4. Combine city, state and national park data in Google Firestore.<br>
 https://medium.com/vue-mastery/full-stack-vue-js-with-firestore-62e2fe2ec1f3
 
-5. Show amount of green space relative to each census block group. (Needs to add up greenspace from GROUP  BY clause, and also include sum of greenspace area with 1/4 mile of block group.)<br>
+5. Show amount of greenspace relative to each census block group. (Needs to add up greenspace from GROUP  BY clause, and also include sum of greenspace area with 1/4 mile of block group.)<br>
 
 SELECT geoid areaID, the_geom, sum(ST_Area(the_geom)/100) AS area, sum(ST_Area(green_geom)/100) AS green_area
 FROM (
