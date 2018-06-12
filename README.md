@@ -21,10 +21,10 @@ https://forum.openstreetmap.org/viewtopic.php?id=61119<br>
 Resulting Atlanta park outline dataset in Carto:<br>
 https://mycommunity.carto.com/builder/f6c3b59c-449d-4f46-9081-44e3cb1c69ac/embed
 
-4. Combine city, state and national park data in Google Firestore.
+4. Combine city, state and national park data in Google Firestore.<br>
 https://medium.com/vue-mastery/full-stack-vue-js-with-firestore-62e2fe2ec1f3
 
-5. Work toward showing the amount of green space relative to each census block group. (Needs to add up greenspace from GROUP  BY clause, and also include sum of greenspace area with 1/4 mile of block group.)<br>
+5. Show amount of green space relative to each census block group. (Needs to add up greenspace from GROUP  BY clause, and also include sum of greenspace area with 1/4 mile of block group.)<br>
 
 SELECT geoid areaID, the_geom, sum(ST_Area(the_geom)/100) AS area, sum(ST_Area(green_geom)/100) AS green_area
 FROM (
