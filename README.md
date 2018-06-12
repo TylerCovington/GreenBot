@@ -21,7 +21,10 @@ https://forum.openstreetmap.org/viewtopic.php?id=61119<br>
 Resulting Atlanta park outline dataset in Carto:<br>
 https://mycommunity.carto.com/builder/f6c3b59c-449d-4f46-9081-44e3cb1c69ac/embed
 
-4. Work toward showing the amount of green space relative to each census block group. (Needs to add up greenspace from GROUP  BY clause, and also include sum of greenspace area with 1/4 mile of block group.)<br>
+4. Combine city, state and national park data in Google Firestore.
+https://medium.com/vue-mastery/full-stack-vue-js-with-firestore-62e2fe2ec1f3
+
+5. Work toward showing the amount of green space relative to each census block group. (Needs to add up greenspace from GROUP  BY clause, and also include sum of greenspace area with 1/4 mile of block group.)<br>
 
 SELECT geoid areaID, the_geom, sum(ST_Area(the_geom)/100) AS area, sum(ST_Area(green_geom)/100) AS green_area
 FROM (
@@ -33,12 +36,12 @@ GROUP BY areaID, the_geom
 ORDER BY areaID<br>
 [Percentage of Polygon Sample](https://gis.stackexchange.com/questions/65956/percentage-of-polygon-in-one-shapefile-within-polygon-of-another)
 
-5. Add sample maps using Google, Carto and MapBox<br>
+6. Add sample maps using Google, Carto and MapBox<br>
 Parks and green space layers in a combined Carto map.<br>
 https://mycommunity.carto.com/builder/2dc11226-86c7-458a-838b-56de1ffd7027/embed<br>
 Incomplete park dataset provided to James by city for Park Finder site.
 
-6. Find Firebase Function samples using DialogFlow v2 with Firestore.<br>
+7. Find Firebase Function samples using DialogFlow v2 with Firestore.<br>
 Firestore setup (DialogFlow v1):<br>
 https://miningbusinessdata.com/firebase-guide-part-1-create-new-dialogflow-agent/
 
