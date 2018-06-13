@@ -25,6 +25,7 @@ https://medium.com/vue-mastery/full-stack-vue-js-with-firestore-62e2fe2ec1f3
 
 5. Show amount of greenspace relative to each census block group. (Needs to add up greenspace from GROUP  BY clause, and also include sum of greenspace area with 1/4 mile of block group.)<br>
 
+```SQL
 SELECT geoid areaID, the_geom, sum(ST_Area(the_geom)/100) AS area, sum(ST_Area(green_geom)/100) AS green_area
 FROM (
   SELECT a.geoid, a.the_geom, b.the_geom green_geom
@@ -32,7 +33,8 @@ FROM (
   JOIN atlanta_greenspace b ON ST_Intersects(a.the_geom, b.the_geom)
 ) sub
 GROUP BY areaID, the_geom
-ORDER BY areaID<br>
+ORDER BY areaID
+```
 [Percentage of Polygon Sample](https://gis.stackexchange.com/questions/65956/percentage-of-polygon-in-one-shapefile-within-polygon-of-another)
 
 6. Add sample maps using Google, Carto and MapBox<br>
